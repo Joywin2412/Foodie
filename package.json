@@ -46,7 +46,9 @@
     "moduleNameMapper": {
       "\\.(css|scss)$": "identity-obj-proxy"
     },
-    "transformIgnorePatterns": []
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native(-.*)?|@react-native(-community)?|@react-navigation|@rneui)/)"
+    ]
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
