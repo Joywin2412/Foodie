@@ -1,6 +1,6 @@
 module.exports = {
   verbose: true,
-  setupFilesAfterEnv: ["<rootDir>src/setupTests.ts"],
+  setupFilesAfterEnv: ["<rootDir>/setupTests.ts"],
   moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
   moduleDirectories: ["node_modules", "src"],
   moduleNameMapper: {
