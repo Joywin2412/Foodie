@@ -43,6 +43,9 @@
     "transform": {
       "^.+\\.(js|ts)$": "babel-jest"
     },
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
     "transformIgnorePatterns": []
   },
   "devDependencies": {
