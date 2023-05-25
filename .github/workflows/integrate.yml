@@ -8,10 +8,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v2
-      uses: action/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: action/setup-node@v1
       with: 
         node-version:18
-      run: npm ci
-      run: npm test
-      run: npm run build
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
