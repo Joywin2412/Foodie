@@ -21,7 +21,7 @@ const Home = () => {
     console.log(id);
     console.log(`${id}`);
     try {
-      let s = `${REACT_APP_URL}/${id.id}/information?apiKey=${process.env.REACT_APP_URL}`;
+      let s = `${process.env.REACT_APP_URL}/${id.id}/information?apiKey=${process.env.REACT_APP_API_KEY}`;
       const requestOptions = {
         headers: { "Content-Type": "application/json" },
       };
@@ -36,7 +36,7 @@ const Home = () => {
     }
 
     try {
-      let s = `${REACT_APP_URL}/${id.id}/nutritionWidget.json?apiKey=${process.env.REACT_APP_URL}`;
+      let s = `${process.env.REACT_APP_URL}/${id.id}/nutritionWidget.json?apiKey=${process.env.REACT_APP_API_KEY}`;
       const requestOptions = {
         headers: { "Content-Type": "application/json" },
       };
@@ -52,7 +52,7 @@ const Home = () => {
     }
 
     try {
-      let s = `${REACT_APP_URL}/${id.id}/ingredientWidget.json?apiKey=${process.env.REACT_APP_URL}`;
+      let s = `${process.env.REACT_APP_URL}/${id.id}/ingredientWidget.json?apiKey=${process.env.REACT_APP_API_KEY}`;
       const requestOptions = {
         headers: { "Content-Type": "application/json" },
       };

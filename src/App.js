@@ -3,6 +3,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/home.js";
 import Dish from "./pages/dish.js";
+// require("dotenv").config();
 function App() {
   return (
     <div className="App">

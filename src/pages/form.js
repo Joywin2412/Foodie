@@ -28,7 +28,10 @@ const Home = () => {
     console.log(query);
     if (form === 0) {
       try {
-        let s = `${REACT_APP_URL}/autocomplete?number=10&query=${query}&apiKey=${process.env.REACT_API_KEY}`;
+        let s = `${process.env.REACT_APP_URL}/autocomplete?number=10&query=${query}&apiKey=${process.env.REACT_APP_API_KEY}`;
+        console.log(process.env.REACT_APP_API_KEY);
+        console.log(process.env.NODE_ENV);
+        // console.log(process.env.REACT_APP_URL);
         const requestOptions = {
           headers: { "Content-Type": "application/json" },
         };
@@ -42,7 +45,7 @@ const Home = () => {
       }
     } else if (form === 2) {
       try {
-        let s = `${REACT_APP_URL}/findByNutrients?minCarbs=${carbs[0]}&maxCarbs=${carbs[1]}&minProtein=${protein[0]}&maxProtein=${protein[1]}&minCalories=${calories[0]}&maxCalories=${calories[1]}&minFat=${fat[0]}&maxFat=${fat[1]}&number=10&apiKey=${process.env.REACT_API_KEY}`;
+        let s = `${process.env.REACT_APP_URL}/findByNutrients?minCarbs=${carbs[0]}&maxCarbs=${carbs[1]}&minProtein=${protein[0]}&maxProtein=${protein[1]}&minCalories=${calories[0]}&maxCalories=${calories[1]}&minFat=${fat[0]}&maxFat=${fat[1]}&number=10&apiKey=${process.env.REACT_APP_API_KEY}`;
         console.log(s);
         const requestOptions = {
           headers: { "Content-Type": "application/json" },
@@ -67,7 +70,7 @@ const Home = () => {
         const p = s2.length;
         s2 = s2.slice(0, p - 2);
         console.log(s2);
-        let s = `${REACT_APP_URL}/findByIngredients?ingredients=${s2}&number=10&apiKey=${process.env.REACT_API_KEY}`;
+        let s = `${process.env.REACT_APP_URL}/findByIngredients?ingredients=${s2}&number=10&apiKey=${process.env.REACT_APP_API_KEY}`;
         const requestOptions = {
           headers: { "Content-Type": "application/json" },
         };
