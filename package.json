@@ -39,17 +39,6 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "transform": {
-      "^.+\\.(js|ts)$": "babel-jest"
-    },
-    "moduleNameMapper": {
-      "\\.(css|scss)$": "identity-obj-proxy"
-    },
-    "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native(-.*)?|@react-native(-community)?|@react-navigation|@rneui)/)"
-    ]
-  },
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
     "babel-jest": "^29.5.0",
