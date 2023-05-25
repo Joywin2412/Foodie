@@ -1,9 +1,8 @@
 name: Continuous Integration
 
 on:
-  push: 
-    branches:
-      -main
+  push:
+    branches: -main
 
 jobs:
   test:
@@ -11,8 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: action/setup-node@v1
-      with:
-        node-version:18
+        with: node-version:18
       - run: npm ci
       - run: npm test
       - run: npm run build
