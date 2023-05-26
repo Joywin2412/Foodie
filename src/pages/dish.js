@@ -6,7 +6,7 @@ import React, {
   useGlobalContext,
 } from "react";
 import { useParams } from "react-router-dom";
-import Navbar from "./navbar";
+import Navbar from "./navbar.js";
 import axios from "axios";
 
 const Home = () => {
