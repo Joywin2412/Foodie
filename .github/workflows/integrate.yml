@@ -32,9 +32,9 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-           git remote set-url origin https://github.com/Joywin2412/Foodie.git
           git config --global user.name "Your Name"
           git config --global user.email "your-email@example.com"
+          git remote set-url origin https://github.com/Joywin2412/Foodie.git
           git checkout -B gh-pages
           git add -f build/
           git commit -m "Deploy build to GitHub Pages"
