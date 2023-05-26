@@ -25,10 +25,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run deploy
-        env:
-          CI: false
+      - name: Deploy 🚀
+        uses: Joywin2412/github-pages-deploy-action@v4
+        with:
+          folder: build
 
       # - name: Run tests
       #   run: npm test
