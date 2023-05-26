@@ -25,10 +25,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Deploy 🚀
-        uses: Joywin2412/github-pages-deploy-action@v4
-        with:
-          folder: build
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name "Joywin2412"
+          git config --global user.email "2021ugcs104@nitjsr.ac.in"
+          npm install -g gh-pages
+          npm run build
+          gh-pages -d build
+        env:
+          REACT_APP_BASE_URL: ${{ https://github.com/Joywin2412/Foodie.git }}
 
       # - name: Run tests
       #   run: npm test
