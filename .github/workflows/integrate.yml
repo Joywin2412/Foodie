@@ -19,7 +19,7 @@ jobs:
           node-version: "v18.14.2"
       - name: Set Git author identity
         run: |
-          git remote set-url https://github.com/Joywin2412/Foodie.git
+          git remote set-url origin https://github.com/Joywin2412/Foodie.git
           git config --global user.name "Joywin2412"
           git config --global user.email "2021ugcs104@nitjsr.ac.in"
       - name: Install dependencies
