@@ -27,6 +27,8 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          CI: false
 
       - name: Deploy to GitHub Pages
         run: |
@@ -36,6 +38,8 @@ jobs:
           git add -f build/
           git commit -m "Deploy build to GitHub Pages"
           git push -f origin gh-pages
+        env:
+          CI: false
 
       # - name: Run tests
       #   run: npm test
