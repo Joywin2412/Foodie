@@ -1,17 +1,25 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useRoutes,
+} from "react-router-dom";
 import Home from "./pages/home.js";
 import Dish from "./pages/dish.js";
-// require("dotenv").config();
+function AppRoutes() {
+  const routes = useRoutes([
+    { path: "/", element: <Home /> },
+    { path: "/dish/:id", element: <Dish /> },
+  ]);
+  return routes;
+}
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dish/:id" element={<Dish />} />
-      </Routes>
-    </div>
+    <Router>
+      <AppRoutes />
+    </Router>
   );
 }
 

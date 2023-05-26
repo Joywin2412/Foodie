@@ -6,7 +6,7 @@ import React, {
   useGlobalContext,
 } from "react";
 import Navbar from "./navbar.js";
-import axios from "axios";
+// import axios from "axios";
 import Form from "./form.js";
 const Home = () => {
   return (

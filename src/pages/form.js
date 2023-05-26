@@ -5,8 +5,8 @@ import React, {
   useId,
   useGlobalContext,
 } from "react";
-import Navbar from "./navbar";
 import axios from "axios";
+import Navbar from "./navbar";
 import { Link } from "react-router-dom";
 
 const Home = () => {
