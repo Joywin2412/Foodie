@@ -25,16 +25,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build project
+        run: npm run build
+
       - name: Deploy to GitHub Pages
         run: |
-          git config --global user.name "Joywin2412"
-          git config --global user.email "2021ugcs104@nitjsr.ac.in"
-          npm install -g gh-pages
-          npm run build
-          gh-pages -d build
-        env:
-          REACT_APP_BASE_URL: ${{ "https://github.com/Joywin2412/Foodie.git" }}
-          CI: false
+          git config --global user.name "Your Name"
+          git config --global user.email "your-email@example.com"
+          git checkout -B gh-pages
+          git add -f build/
+          git commit -m "Deploy build to GitHub Pages"
+          git push -f origin gh-pages
 
       # - name: Run tests
       #   run: npm test
