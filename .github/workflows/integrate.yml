@@ -33,7 +33,7 @@ jobs:
           npm run build
           gh-pages -d build
         env:
-          REACT_APP_BASE_URL: ${{ https://github.com/Joywin2412/Foodie.git }}
+          REACT_APP_BASE_URL: ${{ 'https://github.com/Joywin2412/Foodie.git' }}
 
       # - name: Run tests
       #   run: npm test
