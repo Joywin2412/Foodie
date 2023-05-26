@@ -25,3 +25,8 @@ jobs:
         run: npm run deploy
         env:
           CI: false
+
+      # - name: Run tests
+      #   run: npm test
+      #   env:
+      #     CI: false
