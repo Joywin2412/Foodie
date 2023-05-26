@@ -19,7 +19,7 @@ const Home = () => {
         }}
       >
         {" "}
-        <Link to="/"> Howaeogn </Link>
+        <Link to="/"> Home </Link>
       </button>
       <button
         style={{
