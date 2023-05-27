@@ -105,7 +105,7 @@ const Home = () => {
           })
         : ""}
 
-      <h1> Ingreedededient</h1>
+      <h1> Ingredient</h1>
       {ingredient
         ? ingredient.map((curr_val, curr_idx, arr) => {
             return (
