@@ -11,7 +11,7 @@ import Form from "./form.js";
 const Home = () => {
   return (
     <div>
-      <h1> Foodie </h1>
+      <h1> Foodie 😋 </h1>
       <Navbar />
       <Form />
     </div>
