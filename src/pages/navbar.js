@@ -6,10 +6,11 @@ import React, {
   useGlobalContext,
 } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 const Home = () => {
   return (
-    <div>
-      <button
+    <div style={{ position: "absolute", right: "0px" }}>
+      <span
         style={{
           textDecoration: "none",
           borderStyle: "none",
@@ -19,9 +20,14 @@ const Home = () => {
         }}
       >
         {" "}
-        <Link to="/"> Home </Link>
-      </button>
-      <button
+        <Link to="/" style={{ textDecoration: "none" }}>
+          {" "}
+          <Button variant="contained" color="primary">
+            Home{" "}
+          </Button>{" "}
+        </Link>
+      </span>
+      <span
         style={{
           textDecoration: "none",
           borderStyle: "none",
@@ -30,8 +36,8 @@ const Home = () => {
         }}
       >
         {" "}
-        About us
-      </button>
+        <Button variant="contained">About Us</Button>
+      </span>
     </div>
   );
 };

@@ -8,7 +8,18 @@ import React, {
 import axios from "axios";
 import Navbar from "./navbar.js";
 import { Link } from "react-router-dom";
-
+// import { Button } from "@mui/material
+import {
+  Typography,
+  CssBaseline,
+  Toolbar,
+  AppBar,
+  Container,
+  Box,
+  Input,
+  Button,
+  Grid,
+} from "@mui/material";
 const Home = () => {
   const [loading, setLoading] = useState(0);
   const [query, setQuery] = useState("");
@@ -89,82 +100,92 @@ const Home = () => {
   return (
     <div>
       <form>
-        <label> Enter the dish you wish to search for </label>
+        <Typography variant="h4">
+          <label> Enter the dish you wish to search for </label>
+        </Typography>
         <br></br>
         {form === 2 ? (
           <div>
-            <input
+            <label> Carbohydrates</label>
+            <Input
               type="text"
               onChange={(e) => {
                 let calories2 = calories;
                 calories2[0] = e.target.value;
                 setCalories(calories2);
               }}
-            ></input>
-            <input
+            ></Input>
+            <label> Carbohydrates</label>
+            <Input
               type="text"
               onChange={(e) => {
                 let calories2 = calories;
                 calories2[1] = e.target.value;
                 setCalories(calories2);
               }}
-            ></input>
-            <input
+            ></Input>
+            <label> Protein</label>
+            <Input
               type="text"
               onChange={(e) => {
                 let calories2 = protein;
                 calories2[0] = e.target.value;
                 setProtein(calories2);
               }}
-            ></input>
-            <input
+            ></Input>
+            <label> Protein</label>
+            <Input
               type="text"
               onChange={(e) => {
                 let calories2 = protein;
                 calories2[1] = e.target.value;
                 setProtein(calories2);
               }}
-            ></input>
-            <input
+            ></Input>
+            <label> Calories</label>
+            <Input
               type="text"
               onChange={(e) => {
                 let calories2 = carbs;
                 calories2[0] = e.target.value;
                 setCarbs(calories2);
               }}
-            ></input>
-            <input
+            ></Input>
+            <label> Calories</label>
+            <Input
               type="text"
               onChange={(e) => {
                 let calories2 = carbs;
                 calories2[1] = e.target.value;
                 setCarbs(calories2);
               }}
-            ></input>
-            <input
+            ></Input>
+            <label> Fat</label>
+            <Input
               type="text"
               onChange={(e) => {
                 let calories2 = fat;
                 calories2[0] = e.target.value;
                 setFat(calories2);
               }}
-            ></input>
-            <input
+            ></Input>
+            <label> Fat</label>
+            <Input
               type="text"
               onChange={(e) => {
                 let calories2 = fat;
                 calories2[1] = e.target.value;
                 setFat(calories2);
               }}
-            ></input>
+            ></Input>
           </div>
         ) : form === 1 ? (
           <div>
             {ingredients.map((curr_val, curr_idx, arr) => {
               return (
                 <div>
-                  <p> {curr_val}</p>
-                  <button
+                  <Typography variant="overline"> {curr_val}</Typography>
+                  <Button
                     onClick={(e) => {
                       e.preventDefault();
                       let ingredients2 = [...ingredients];
@@ -174,17 +195,16 @@ const Home = () => {
                       setIngredients(ingredients2);
                     }}
                   >
-                    {" "}
-                    Remove
-                  </button>{" "}
+                    <Typography variant="button"> Remove</Typography>
+                  </Button>{" "}
                 </div>
               );
             })}
-            <input
+            <Input
               type="text"
               onChange={(e) => setIngredient(e.target.value)}
-            ></input>
-            <button
+            ></Input>
+            <Button
               onClick={(e) => {
                 // console.log(typeof ingredient);
                 e.preventDefault();
@@ -200,21 +220,24 @@ const Home = () => {
             >
               {" "}
               Add{" "}
-            </button>
+            </Button>
           </div>
         ) : (
-          <input
+          <Input
             type="text"
             onChange={(e) => {
               setQuery(e.target.value);
             }}
             value={query}
-          ></input>
+          ></Input>
         )}
-        <input type="submit" onClick={(e) => submitHandler(e)} />
+        <Button color="primary" onClick={(e) => submitHandler(e)}>
+          {" "}
+          Submit
+        </Button>
         <br></br>
         <br></br>
-        <button
+        <Button
           onClick={(e) => {
             e.preventDefault();
             setForm(0);
@@ -222,8 +245,8 @@ const Home = () => {
         >
           {" "}
           Search by Recipe{" "}
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={(e) => {
             e.preventDefault();
             setForm(1);
@@ -231,8 +254,8 @@ const Home = () => {
         >
           {" "}
           Search by Ingredients{" "}
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={(e) => {
             e.preventDefault();
             setForm(2);
@@ -240,48 +263,77 @@ const Home = () => {
         >
           {" "}
           Search by Nutrients{" "}
-        </button>
-        {form === 0
-          ? typeof dishes === "object"
-            ? dishes.map((curr_val, curr_idx, arr) => {
-                console.log(form);
-                // console.log(curr_val);
-                return (
-                  <Link to={`/dish/${curr_val.id}`}>
-                    {" "}
-                    <p>{curr_val.title}</p>
-                  </Link>
-                );
-              })
-            : ""
-          : ""}
-        {form === 2
-          ? typeof dishes2 === "object"
-            ? dishes2.map((curr_val, curr_idx, arr) => {
-                console.log(form);
-                return (
-                  <Link to={`/dish/${curr_val.id}`}>
-                    {" "}
-                    <p>{curr_val.title}</p>{" "}
-                  </Link>
-                );
-              })
-            : ""
-          : ""}
+        </Button>
+        <br></br>
+        <br></br>
 
-        {form === 1
-          ? dishes3
-            ? dishes3.map((curr_val, curr_idx, arr) => {
-                console.log({ curr_val });
-                return (
-                  <Link to={`/dish/${curr_val.id}`}>
-                    {" "}
-                    <p>{curr_val.title}</p>{" "}
-                  </Link>
-                );
-              })
-            : ""
-          : ""}
+        <br></br>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+          justifyContent="center"
+        >
+          {form === 0
+            ? typeof dishes === "object"
+              ? dishes.map((curr_val, curr_idx, arr) => {
+                  console.log(form);
+                  // console.log(curr_val);
+                  return (
+                    <Grid xs={2}>
+                      <Link to={`/dish/${curr_val.id}`}>
+                        {" "}
+                        <p>{curr_val.title}</p>
+                      </Link>
+                    </Grid>
+                  );
+                })
+              : ""
+            : ""}
+        </Grid>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+          justifyContent="center"
+        >
+          {form === 2
+            ? typeof dishes2 === "object"
+              ? dishes2.map((curr_val, curr_idx, arr) => {
+                  console.log(form);
+                  return (
+                    <Link to={`/dish/${curr_val.id}`}>
+                      {" "}
+                      <p>{curr_val.title}</p>{" "}
+                    </Link>
+                  );
+                })
+              : ""
+            : ""}
+        </Grid>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+          justifyContent="center"
+          disableEqualOverflow
+        >
+          {form === 1
+            ? dishes3
+              ? dishes3.map((curr_val, curr_idx, arr) => {
+                  console.log({ curr_val });
+                  return (
+                    <Link to={`/dish/${curr_val.id}`}>
+                      {" "}
+                      <Typography min-minWidth="0">
+                        {curr_val.title}
+                      </Typography>{" "}
+                    </Link>
+                  );
+                })
+              : ""
+            : ""}
+        </Grid>
       </form>
     </div>
   );
