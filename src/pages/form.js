@@ -19,6 +19,9 @@ import {
   Input,
   Button,
   Grid,
+  Card,
+  CardContent,
+  CardMedia,
 } from "@mui/material";
 const Home = () => {
   const [loading, setLoading] = useState(0);
@@ -279,12 +282,27 @@ const Home = () => {
               ? dishes.map((curr_val, curr_idx, arr) => {
                   console.log(form);
                   // console.log(curr_val);
+                  const finalSentence = curr_val.title.replace(
+                    /(^\w{1})|(\s+\w{1})/g,
+                    (letter) => letter.toUpperCase()
+                  );
+                  // let s= `https://spoonacular.com/recipeImages/${curr_val.id}-312x231.{curr_val.imageType}`;
+                  // words.join(" ");
                   return (
-                    <Grid xs={2}>
-                      <Link to={`/dish/${curr_val.id}`}>
-                        {" "}
-                        <p>{curr_val.title}</p>
-                      </Link>
+                    <Grid item>
+                      <Card variant="outlined">
+                        <CardMedia
+                          component="img"
+                          image={`https://spoonacular.com/recipeImages/${curr_val.id}-312x231.${curr_val.imageType}`}
+                          alt="Recipe"
+                        />
+
+                        <CardContent>
+                          <Link to={`/dish/${curr_val.id}`}>
+                            <p>{finalSentence}</p>
+                          </Link>
+                        </CardContent>
+                      </Card>
                     </Grid>
                   );
                 })
@@ -302,10 +320,14 @@ const Home = () => {
               ? dishes2.map((curr_val, curr_idx, arr) => {
                   console.log(form);
                   return (
-                    <Link to={`/dish/${curr_val.id}`}>
-                      {" "}
-                      <p>{curr_val.title}</p>{" "}
-                    </Link>
+                    <Card variant="outlined">
+                      <CardContent>
+                        <Link to={`/dish/${curr_val.id}`}>
+                          {" "}
+                          <p>{curr_val.title}</p>{" "}
+                        </Link>
+                      </CardContent>
+                    </Card>
                   );
                 })
               : ""
@@ -325,9 +347,13 @@ const Home = () => {
                   return (
                     <Link to={`/dish/${curr_val.id}`}>
                       {" "}
-                      <Typography min-minWidth="0">
-                        {curr_val.title}
-                      </Typography>{" "}
+                      <Card variant="outlined">
+                        <CardContent>
+                          <Typography min-minWidth="0">
+                            {curr_val.title}
+                          </Typography>{" "}
+                        </CardContent>
+                      </Card>
                     </Link>
                   );
                 })

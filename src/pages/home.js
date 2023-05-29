@@ -26,8 +26,8 @@ const Home = () => {
         <AppBar>
           <Toolbar>
             <DinnerDining style={{ height: "70px", width: "70px" }} />
-            <Typography variant="h1"> Foodie </Typography>
-            <Navbar style={{ position: "absolute", right: "0px" }} />
+            <Typography> Foodie </Typography>
+            <Navbar />
           </Toolbar>
         </AppBar>
         <br></br>

@@ -9,16 +9,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 const Home = () => {
   return (
-    <div style={{ position: "absolute", right: "0px" }}>
-      <span
-        style={{
-          textDecoration: "none",
-          borderStyle: "none",
-          margin: "2px",
-          borderStyle: "2px solid black",
-          color: "white",
-        }}
-      >
+    <div>
+      <span>
         {" "}
         <Link to="/" style={{ textDecoration: "none" }}>
           {" "}
@@ -27,14 +19,7 @@ const Home = () => {
           </Button>{" "}
         </Link>
       </span>
-      <span
-        style={{
-          textDecoration: "none",
-          borderStyle: "none",
-          margin: "2px",
-          borderStyle: "2px solid black",
-        }}
-      >
+      <span>
         {" "}
         <Button variant="contained">About Us</Button>
       </span>
